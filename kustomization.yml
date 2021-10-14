@@ -1,7 +1,8 @@
+kind: Kustomization
 secretGenerator:
 - name: mysql-pass
   literals:
   - password=HerpaDerpa67
 resources:
-  - mysql-deployment.yaml
-  - wordpress-deployment.yaml
+  - mysql-deployment.yml
+  - wordpress-deployment.yml
