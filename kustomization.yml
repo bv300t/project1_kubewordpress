@@ -1,4 +1,5 @@
 kind: Kustomization
+apiVersion: configuration.k8s.io/v1beta1
 secretGenerator:
 - name: mysql-pass
   literals:
