@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Service
 metadata:
   name: wordpress
@@ -12,7 +12,7 @@ spec:
     tier: frontend
   type: LoadBalancer
 ---
-apiVersion: v1
+apiVersion: apps/v1
 kind: PersistentVolumeClaim
 metadata:
   name: wp-pv-claim
@@ -51,10 +51,7 @@ spec:
         - name: WORDPRESS_DB_HOST
           value: wordpress-mysql
         - name: WORDPRESS_DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-pass
-              key: password
+          value: HerpaDerpa67
         ports:
         - containerPort: 80
           name: wordpress
@@ -66,7 +63,7 @@ spec:
         persistentVolumeClaim:
           claimName: wp-pv-claim
 ---
-apiVersion: v1
+apiVersion: apps/v1
 kind: Service
 metadata:
   name: wordpress-mysql
@@ -80,7 +77,7 @@ spec:
     tier: mysql
   clusterIP: None
 ---
-apiVersion: v1
+apiVersion: apps/v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-pv-claim
@@ -120,7 +117,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: mysql-pass
-              key: password
+              key: HerpaDerpa67
         ports:
         - containerPort: 3306
           name: mysql
