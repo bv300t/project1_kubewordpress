@@ -1,5 +1,3 @@
-apiVersion: networking.k8s.io/v1beta
-kind: Kustomization
 secretGenerator:
 - name: mysql-pass
   literals:
