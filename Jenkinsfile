@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout the code') { 
             steps {
-               git branch: 'main', credentialsId: 'github', url: 'https://github.com/cs-dww/project1_kubewordpress.git'
+               git branch: 'main', credentialsId: 'github', url: 'https://github.com/bv300t/project1_kubewordpress.git'
             }
         }
         stage('Linux command') { 
